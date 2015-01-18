@@ -10,7 +10,7 @@ namespace Core {
             else{
                 $setter = 'set'.$name;
                 if(method_exists($this, $setter)){
-                    throw new Exception('Getting write-only property '.get_class($this).'->'.$name);
+                    throw new Exception('Reading write-only property '.get_class($this).'->'.$name);
                 }
             }
         }
