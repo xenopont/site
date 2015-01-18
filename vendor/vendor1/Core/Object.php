@@ -1,8 +1,9 @@
 <?php
 namespace vendor1\Core {
 	
-	use vendor1\Exceptions\InvalidCallException;
-	use vendor1\Exceptions\UnknownPropertyException;
+	//use vendor1\Exceptions\InvalidCallException;
+	use vendor1\Exceptions;
+	//use vendor1\Exceptions\UnknownPropertyException;
 	
 	class Object {
 		public function __get($name) {
@@ -11,12 +12,11 @@ namespace vendor1\Core {
 				return $this->$getter();
 			}
 			else{
-				$setter = self::SetterName($name);
-				if(method_exists($this, $setter)){
-					throw new InvalidCallException('Reading write-only property '.get_class($this).'->'.$name);
+				if(method_exists($this, self::SetterName($name))){
+					throw new Exceptions\InvalidCall('Reading write-only property '.get_class($this).'->'.$name);
 				}
 				else{
-					throw new UnknownPropertyException('Reading unknown property '.get_class($this).'->'.$name);
+					throw new Exceptions\UnknownProperty('Reading unknown property '.get_class($this).'->'.$name);
 				}
 			}
 		}
@@ -27,12 +27,11 @@ namespace vendor1\Core {
 				return $this->$setter($value);
 			}
 			else{
-				$getter = self::GetterName($name);
-				if(method_exists($this, $getter)){
-					throw new InvalidCallException('Writing read-only property '.get_class($this).'->'.$name);
+				if(method_exists($this, self::GetterName($name))){
+					throw new Exceptions\InvalidCall('Writing read-only property '.get_class($this).'->'.$name);
 				}
 				else{
-					throw new UnknownPropertyException('Writing unknown property '.get_class($this).'->'.$name);
+					throw new Exceptions\UnknownProperty('Writing unknown property '.get_class($this).'->'.$name);
 				}
 			}
 		}

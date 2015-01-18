@@ -5,11 +5,11 @@ namespace vendor1\Exceptions {
 		//
 	}
 	
-	class InvalidCallException extends Exception {
+	class InvalidCall extends Exception {
 		//
 	}
 	
-	class UnknownPropertyException extends Exception {
+	class UnknownProperty extends Exception {
 		//
 	}
 	
