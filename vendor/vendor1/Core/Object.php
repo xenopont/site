@@ -1,9 +1,6 @@
 <?php
 namespace vendor1\Core {
-	
-	//use vendor1\Exceptions\InvalidCallException;
 	use vendor1\Exceptions;
-	//use vendor1\Exceptions\UnknownPropertyException;
 	
 	class Object {
 		public function __get($name) {
