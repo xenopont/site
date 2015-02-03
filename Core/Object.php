@@ -1,6 +1,6 @@
 <?php
 namespace vendor1\Core {
-	use vendor1\Exceptions;
+	use vendor1\Core\Exceptions;
 	
 	class Object {
 		public function __get($name) {
