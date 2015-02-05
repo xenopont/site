@@ -2,6 +2,10 @@
 namespace vendor1\Core {
 	use vendor1\Core\Exceptions;
 	
+	interface IPropertyOwner {
+		
+	}
+	
 	class Object {
 		public function __get($name) {
 			$getter = self::GetterName($name);
@@ -33,11 +37,11 @@ namespace vendor1\Core {
 			}
 		}
 		
-		private static function GetterName($property){
+		public static function GetterName($property){
 			return 'Get'.$property;
 		}
 		
-		private static function SetterName($property){
+		public static function SetterName($property){
 			return 'Set'.$property;
 		}
 	}
