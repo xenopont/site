@@ -3,10 +3,13 @@ namespace vendor1\Core {
 	use vendor1\Core\Exceptions;
 	
 	interface IPropertyOwner {
-		
+		public function __get($name);
+		public function __set($name, $value);
+		public static function GetterName($property);
+		public static function SetterName($property);
 	}
 	
-	class Object {
+	class Object implements IPropertyOwner{
 		public function __get($name) {
 			$getter = self::GetterName($name);
 			if(method_exists($this, $getter)){
