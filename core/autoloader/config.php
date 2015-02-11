@@ -1,16 +1,25 @@
 <?php
-return [
-	'map' => [
-		'core/Exceptions.php' => [
-			'vendor1\\Core\\Exceptions\\Exception',
-			'vendor1\\Core\\Exceptions\\InvalidCall',
-			'vendor1\\Core\\Exceptions\\UnknownProperty',
+namespace vendor1\Core {
+
+	return [
+		'atlas' => [
+			new AutoloaderMap('core/Exceptions.php', 'vendor1\\Core\\Exceptions', [
+				'Exception',
+				'InvalidCall',
+				'UnknownProperty',
+			]),
+			new AutoloaderMap('core/Object.php', 'vendor1\\Core', [
+				'Object',
+				'IPropertyOwner'
+			]),
+			new AutoloaderMap('core/html/Element.php', 'vendor1\\Core\\Html', [
+				'BaseElement',
+				'Element',
+				'Page',
+				'Body',
+				'Head',
+			])
 		],
-		'core/Object.php' => [
-			'vendor1\\Core\\Object'
-		],
-		'core/html/Element.php' => [
-			'vendor1\\Core\\Html\\Page'
-		],
-	],
-];
+	];
+
+}
