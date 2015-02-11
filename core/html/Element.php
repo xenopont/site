@@ -5,35 +5,6 @@ namespace vendor1\Core\Html {
 	use vendor1\Core\IPropertyOwner;
 	use vendor1\Core\Exceptions;
 	
-	/**
-	 * @property Head $Head Page head
-	 * @property Body $Body Page body
-	 */
-	class Page extends \DOMDocument {
-		protected $Head = null;
-		protected $Body = null;
-		
-		protected function GetHead(){
-			return $this->Head;
-		}
-		
-		protected function GetBody(){
-			return $this->Body;
-		}
-	}
-	
-	class Head extends Element {
-		//
-	}
-	
-	class Body extends Element {
-		//
-	}
-	
-	class Element extends BaseElement {
-		//
-	}
-	
 	class BaseElement extends \DOMElement implements IPropertyOwner{
 		public static function GetterName($property) {
 			return 'Get'.$property;
@@ -72,6 +43,35 @@ namespace vendor1\Core\Html {
 				}
 			}
 		}
+	}
+	
+	class Element extends BaseElement {
+		//
+	}
+	
+	/**
+	 * @property Head $Head Page head
+	 * @property Body $Body Page body
+	 */
+	class Page extends \DOMDocument {
+		protected $Head = null;
+		protected $Body = null;
+		
+		protected function GetHead(){
+			return $this->Head;
+		}
+		
+		protected function GetBody(){
+			return $this->Body;
+		}
+	}
+	
+	class Head extends Element {
+		//
+	}
+	
+	class Body extends Element {
+		//
 	}
 	
 }
