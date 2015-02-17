@@ -15,11 +15,7 @@ require_once(__DIR__.'/../../core/autoloader/autoloader.php');
 use Core\Html\Page;
 use Core\Object;
 $Page = new Page();
-class TestClass extends Object {
-	private $Name = '';
-}
-$t = new TestClass();
-var_dump($t);
+var_dump($Page->saveXML());
 
 			?></pre>
 		</div>
