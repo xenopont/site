@@ -15,10 +15,15 @@ namespace vendor1\Core {
 			new AutoloaderMap('core/html/Element.php', 'vendor1\\Core\\Html', [
 				'BaseElement',
 				'Element',
+			]),
+			new AutoloaderMap('core/html/Page.php', 'vendor1\\Core\\Html', [
 				'Page',
 				'Body',
 				'Head',
-			])
+			]),
+			new AutoloaderMap('core/html/Visual.php', 'vendor1\\Core\\Html', [
+				'VisualElement',
+			]),
 		],
 	];
 
