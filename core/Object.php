@@ -1,6 +1,6 @@
 <?php
-namespace vendor1\Core {
-	use vendor1\Core\Exceptions;
+namespace Core {
+	use Core\Exceptions;
 	
 	interface IPropertyOwner {
 		public function __get($name);

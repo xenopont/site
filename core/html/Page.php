@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor1\Core\Html {
+namespace Core\Html {
 	
 	/**
 	 * @property Head $Head Page head

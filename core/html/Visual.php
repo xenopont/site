@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor1\Core\Html {
+namespace Core\Html {
 	
 	class VisualElement extends Element {
 		//

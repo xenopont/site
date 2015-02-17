@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor1\Core {
+namespace Core {
 	
 	class AutoloaderMap {
 		public $Classes   = array();

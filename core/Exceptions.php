@@ -1,5 +1,5 @@
 <?php
-namespace vendor1\Core\Exceptions {
+namespace Core\Exceptions {
 	
 	class Exception extends \Exception {
 		//

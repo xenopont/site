@@ -12,8 +12,8 @@ ini_set('display_errors', 'on');
 			<pre><?php
 
 require_once(__DIR__.'/../../core/autoloader/autoloader.php');
-use vendor1\Core\Html\Page;
-use vendor1\Core\Object;
+use Core\Html\Page;
+use Core\Object;
 $Page = new Page();
 class TestClass extends Object {
 	private $Name = '';
