@@ -1,9 +1,9 @@
 <?php
  
-namespace vendor1\Core\Html {
+namespace Core\Html {
 	
-	use vendor1\Core\IPropertyOwner;
-	use vendor1\Core\Exceptions;
+	use Core\IPropertyOwner;
+	use Core\Exceptions;
 	
 	class BaseElement extends \DOMElement implements IPropertyOwner{
 		public static function GetterName($property) {
