@@ -8,12 +8,12 @@ namespace Core {
 				'InvalidCall',
 				'UnknownProperty',
 			]),
-			new AutoloaderMap('core/Object.php', 'Core', [
-				'Object',
-			]),
-			new AutoloaderMap('core/Object.php', 'Core', [
+			new AutoloaderMap('core/PropertyOwner.php', 'Core', [
 				'IPropertyOwner',
 				'PropertyOwner',
+			]),
+			new AutoloaderMap('core/Object.php', 'Core', [
+				'Object',
 			]),
 			new AutoloaderMap('core/html/Element.php', 'Core\\Html', [
 				'BaseElement',
