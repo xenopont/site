@@ -10,7 +10,10 @@ namespace Core {
 			]),
 			new AutoloaderMap('core/Object.php', 'Core', [
 				'Object',
-				'IPropertyOwner'
+			]),
+			new AutoloaderMap('core/Object.php', 'Core', [
+				'IPropertyOwner',
+				'PropertyOwner',
 			]),
 			new AutoloaderMap('core/html/Element.php', 'Core\\Html', [
 				'BaseElement',
