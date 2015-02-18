@@ -12,9 +12,22 @@ ini_set('display_errors', 'on');
 			<pre><?php
 
 require_once(__DIR__.'/../../core/autoloader/autoloader.php');
-use Core\Html\Element;
-$e = new Element('div');
-var_dump($e);
+$imp = new DOMImplementation();
+$dt = $imp->createDocumentType('html');
+$doc = $imp->createDocument(null, null, $dt);
+$html = $doc->createElement('html');
+$head = $doc->createElement('head');
+$title = $doc->createElement('title', 'Untitled-1');
+$body = $doc->createElement('body');
+$div = $doc->createElement('div');
+$text = $doc->createTextNode('');
+$div->appendChild($text);
+$body->appendChild($div);
+$head->appendChild($title);
+$html->appendChild($head);
+$html->appendChild($body);
+$doc->appendChild($html);
+echo htmlspecialchars($doc->saveXML());
 
 			?></pre>
 		</div>
