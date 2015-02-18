@@ -16,7 +16,6 @@ namespace Core {
 				'Object',
 			]),
 			new AutoloaderMap('core/html/Element.php', 'Core\\Html', [
-				'BaseElement',
 				'Element',
 			]),
 			new AutoloaderMap('core/html/Page.php', 'Core\\Html', [

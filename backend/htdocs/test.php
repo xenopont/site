@@ -12,9 +12,9 @@ ini_set('display_errors', 'on');
 			<pre><?php
 
 require_once(__DIR__.'/../../core/autoloader/autoloader.php');
-use Core\Html\Page;
-$Page = new Page();
-var_dump($Page->Head);
+use Core\Html\Element;
+$e = new Element('div');
+var_dump($e);
 
 			?></pre>
 		</div>

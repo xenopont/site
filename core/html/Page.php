@@ -3,13 +3,14 @@
 namespace Core\Html {
 	
 	use Core\IPropertyOwner;
+	use Core\TPropertyOwner;
 	
 	/**
 	 * @property Head $Head Page head
 	 * @property Body $Body Page body
 	 */
 	class Page extends \DOMDocument implements IPropertyOwner{
-		use \Core\TPropertyOwner;
+		use TPropertyOwner;
 		
 		protected $Html = null;
 		protected $Head = null;
