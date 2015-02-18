@@ -14,7 +14,7 @@ ini_set('display_errors', 'on');
 require_once(__DIR__.'/../../core/autoloader/autoloader.php');
 use Core\Html\Page;
 $Page = new Page();
-var_dump($Page->saveXML());
+var_dump($Page->Head);
 
 			?></pre>
 		</div>

@@ -11,7 +11,7 @@ namespace Core {
 		public static function SetterName($property);
 	}
 	
-	class PropertyOwner implements IPropertyOwner {
+	trait TPropertyOwner {
 		public function __get($name) {
 			$getter = self::GetterName($name);
 			if(method_exists($this, $getter)){

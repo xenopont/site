@@ -3,7 +3,7 @@ namespace Core {
 	
 	//use Core\PropertyOwner;
 	
-	class Object extends PropertyOwner{
-		//
+	class Object implements IPropertyOwner{
+		use TPropertyOwner;
 	}
 }
