@@ -2,7 +2,7 @@
 
 ##Apache2 configuration
 
-In apache2.conf:
+In `apache2.conf`:
 
 ```apacheconf
 <Directory /var/www>
@@ -12,7 +12,7 @@ In apache2.conf:
 </Directory>
 ```
 
-In 000-default.conf:
+In `000-default.conf`:
 
 ```apacheconf
 <VirtualHost *:80>
@@ -31,7 +31,7 @@ In 000-default.conf:
 </VirtualHost>
 ```
 
-.htaccess (in the same directory with index.php) example:
+`.htaccess` (in the same directory with `index.php`) example:
 
 ```apacheconf
 Options +FollowSymLinks
