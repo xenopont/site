@@ -12,7 +12,7 @@ ini_set('display_errors', 'on');
 			<pre><?php
 
 require_once(__DIR__.'/../../core/autoloader/autoloader.php');
-$imp = new DOMImplementation();
+/*$imp = new DOMImplementation();
 $dt = $imp->createDocumentType('html');
 $doc = $imp->createDocument(null, null, $dt);
 $html = $doc->createElement('html');
@@ -27,7 +27,13 @@ $head->appendChild($title);
 $html->appendChild($head);
 $html->appendChild($body);
 $doc->appendChild($html);
-echo htmlspecialchars($doc->saveXML());
+echo htmlspecialchars($doc->saveXML());*/
+
+use Core\Html\BasePage;
+use Core\Html\RDoctypeElement;
+
+$page = new BasePage(new RDoctypeElement('html'));
+echo htmlspecialchars($page->Document->saveXML());
 
 			?></pre>
 		</div>

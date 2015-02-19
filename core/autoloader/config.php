@@ -14,17 +14,13 @@ namespace Core {
 			]),
 			new AutoloaderMap('core/Object.php', 'Core', [
 				'Object',
-			]),
-			new AutoloaderMap('core/html/Element.php', 'Core\\Html', [
-				'Element',
+				'Record',
 			]),
 			new AutoloaderMap('core/html/Page.php', 'Core\\Html', [
-				'Page',
-				'Body',
-				'Head',
-			]),
-			new AutoloaderMap('core/html/Visual.php', 'Core\\Html', [
-				'VisualElement',
+				'BasePage',
+				'Html5Page',
+				'RDoctypeElement',
+				'RDomDocument',
 			]),
 		],
 	];

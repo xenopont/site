@@ -5,4 +5,8 @@ namespace Core {
 		use TPropertyOwner;
 	}
 	
+	class Record {
+		//
+	}
+	
 }
