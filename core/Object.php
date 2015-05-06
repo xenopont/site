@@ -8,5 +8,5 @@ namespace Core {
 	class Record {
 		//
 	}
-	
+	// some empty comment
 }
