@@ -47,3 +47,17 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php
 ```
+
+## create a user and change /var/www permissions
+```bash
+#!/bin/bash
+
+echo "Add user"
+useradd --groups www-data --password 123 webdev
+
+echo "Changing /var/www permissions"
+cd /var
+chown -R webdev:www-data www
+chmod -R 775 www
+
+```
