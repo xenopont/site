@@ -61,3 +61,15 @@ chown -R webdev:www-data www
 chmod -R 775 www
 
 ```
+
+## to allow access from php storm
+```bash
+# add
+
+KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+
+# to /etc/ssh/sshd_config
+# then
+
+sudo systemctl restart sshd
+```
