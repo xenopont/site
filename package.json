@@ -4,7 +4,8 @@
   "description": "site",
   "main": "index.html",
   "scripts": {
-    "test": "npm run test"
+    "lint": "./node_modules/.bin/tslint --project .",
+    "tsc": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/xenopont/site/issues"
   },
-  "homepage": "https://github.com/xenopont/site#readme"
+  "homepage": "https://github.com/xenopont/site#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.3"
+  }
 }
