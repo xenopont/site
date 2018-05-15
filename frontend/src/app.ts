@@ -1,6 +1,9 @@
+import { Logger } from './services/logger'
+
 class Website {
     public main(): void {
-        console.log('Hello World!')
+        const l = new Logger('Hello World!')
+        l.out()
     }
 }
 
