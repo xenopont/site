@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "lint": "./node_modules/.bin/tslint --project .",
-    "compile": "./node_modules/.bin/tsc",
-    "bundle": "npx webpack"
+    "ts": "./node_modules/.bin/tsc",
+    "pack": "./node_modules/.bin/webpack",
+    "build": "node ./frontend/build.js"
   },
   "repository": {
     "type": "git",
