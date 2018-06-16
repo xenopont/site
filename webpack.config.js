@@ -5,7 +5,7 @@ module.exports = {
     // entry: './frontend/src/app.ts',
     mode: 'production',
     output: {
-        filename: 'bundle.js',
+        filename: 'app.js',
         path: path.resolve(__dirname, 'frontend/dist'),
     },
     /*devtool: 'inline-source-map',
