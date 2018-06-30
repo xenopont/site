@@ -2,6 +2,8 @@
 #     docker build -t site-image --file ./frontend/docker/local.dockerfile .
 # Install node modules:
 #     docker run --rm -v $PWD:/srv/site site-image npm install
+# Install node modules on shared cifs on from windows:
+#     docker run --rm -v $PWD:/srv/site site-image npm install --no-bin-links
 # Run TS Lint:
 #     docker run --rm -v $PWD:/srv/site site-image npm run lint
 # Run server:
