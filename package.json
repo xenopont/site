@@ -4,11 +4,11 @@
   "description": "site",
   "main": "index.html",
   "scripts": {
-    "lint": "./node_modules/tslint/bin/tslint --project .",
-    "ts": "./node_modules/typescript/bin/tsc",
-    "pack": "./node_modules/webpack-cli/bin/cli.js",
+    "lint": "node ./node_modules/tslint/bin/tslint --project .",
+    "ts": "node ./node_modules/typescript/bin/tsc",
+    "pack": "node ./node_modules/webpack-cli/bin/cli.js",
     "build": "node ./frontend/build.js",
-    "watch": "./node_modules/watch/cli.js 'npm run build' ./frontend/src"
+    "watch": "node ./node_modules/watch/cli.js 'npm run build' ./frontend/src"
   },
   "repository": {
     "type": "git",
