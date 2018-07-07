@@ -8,3 +8,4 @@ frontend/dist/*
 frontend/js-compiled/*
 !frontend/js-compiled/.gitkeep
 npm-debug.log
+.vscode
