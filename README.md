@@ -14,3 +14,8 @@
 - `mount -t vboxsf site /srv/site`
 - `apt-get install nginx`
 - `ln -s /srv/site/frontend/docker/default.conf /etc/nginx/conf.d/default.conf`
+
+
+- create a group if it doesn't exist `sudo groupadd docker`
+- add your user to that group `sudo usermod -aG docker $USER`
+- mount the shared folder `mount -t vboxsf site /srv/site`
