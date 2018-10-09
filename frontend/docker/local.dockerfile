@@ -1,7 +1,7 @@
 # Build server image:
 #     docker build -t site-image --file ./frontend/docker/local.dockerfile .
 # Run server:
-#     docker run -d --name site -v $PWD:/srv/site -v $PWD/frontend/src/lib/jsapp:/srv/site/frontend/src/lib/jsapp -p 8080:80 site-image
+#     docker run -d --name site -v ${PWD}:/srv/site -v ${PWD}/frontend/src/lib/jsapp:/srv/site/frontend/src/lib/jsapp -p 8080:80 site-image
 # Install node modules:
 #     docker exec site npm install
 # Run TS Lint:
