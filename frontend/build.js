@@ -5,34 +5,59 @@ const execFile = require('child_process').execFile
 
 const srcFolder = path.resolve(__dirname, './src')
 const distFolder = path.resolve(__dirname, './dist')
+const jsFolder = path.resolve(__dirname, './js-compiled')
 const isWindows = /^win/.test(process.platform)
 
 function isTypescriptFile(filename) {
     return filename.match(/^.*\.tsx?$/)
 }
 
-// Step 1. Copy everything that is not *.ts from source to dist
-console.log('copying files...');
-fs.readdir(srcFolder, (err, files) => {
-    if (err) {
-        console.log(err)
+function cleanUpFolderSync(pathToFolder) {
+    fs.readdirSync(pathToFolder).forEach((file) => {
+        const fullPath = pathToFolder + '/' + file
+        if (fs.statSync(fullPath).isDirectory()) {
+            cleanUpFolderSync(fullPath)
+            fs.rmdirSync(fullPath)
+            return
+        }
+        fs.unlinkSync(fullPath)
+    })
+}
+
+function createGitKeepSync(pathToFolder) {
+    fs.writeFileSync(pathToFolder + '/' + '.gitkeep', '')
+}
+
+function copyFilesSync(source, destination) {
+    const files = fs.readdirSync(source)
+    if (files.length == 0) {
         return
     }
     files.forEach((file) => {
-        let sourceFile = srcFolder + '/' + file
-        let distFile = distFolder + '/' + file
-        fs.stat(sourceFile, (sErr, stats) => {
-            if (sErr) {
-                console.log(sErr)
-                return
-            }
-            if (!stats.isDirectory() && !isTypescriptFile(file)) {
-                fs.createReadStream(sourceFile).pipe(fs.createWriteStream(distFile))
-            }
-        })
+        // skip typescript files
+        if (isTypescriptFile(file)) {
+            return
+        }
+        const sourceFile = source + '/' + file
+        // skip directories
+        if (fs.statSync(sourceFile).isDirectory()) {
+            return
+        }
+        const destFile = destination + '/' + file
+        fs.copyFileSync(sourceFile, destFile)
     })
-    console.log('files copied.')
-});
+}
+
+// Step 0. Clean up compiled js files and dist
+console.log('Cleaning up...')
+cleanUpFolderSync(distFolder)
+createGitKeepSync(distFolder)
+cleanUpFolderSync(jsFolder)
+createGitKeepSync(jsFolder)
+
+// Step 1. Copy everything that is not *.ts from source to dist
+console.log('Copying files...');
+copyFilesSync(srcFolder, distFolder) // doesn't copy subfolders
 
 // Step 2. Run typescript
 console.log('compiling typescript...')

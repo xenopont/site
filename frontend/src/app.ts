@@ -1,8 +1,9 @@
-class Website {
-    public main(): void {
-        //
-    }
-}
+import RouteMethod from './lib/jsapp/interfaces/RouteMethod';
+import router from './routes'
 
-const website = new Website()
-website.main()
+document.addEventListener('DOMContentLoaded', () => {
+    const method: RouteMethod | null = router.resolve(window.location.pathname)
+    if (method !== null) {
+        method()
+    }
+})
