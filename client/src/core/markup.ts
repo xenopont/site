@@ -36,8 +36,8 @@ const attachInnerHtml = (element: HTMLElement, str: string) => {
 type ElementChild = ElementMarkup | string
 
 class ElementMarkup { // tslint:disable-line:max-classes-per-file
-    private type: string
-    private attributes: AttributeList
+    private readonly type: string
+    private readonly attributes: AttributeList
     private content: ElementChild[]
     // -------- Event Handlers --------
     private createEventHandler: HtmlElementEventHandler | null = null
@@ -60,10 +60,9 @@ class ElementMarkup { // tslint:disable-line:max-classes-per-file
                 attachInnerHtml(element, item as string)
                 return
             }
-            if (item instanceof ElementMarkup) {
-                element.appendChild((item as ElementMarkup).toHtml())
-                return
-            }
+            // otherwise, item is ElementMarkup
+            element.appendChild((item as ElementMarkup).toHtml())
+            return
         })
         // onCreate individual callback
         if (this.createEventHandler !== null) {

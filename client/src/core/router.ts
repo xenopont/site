@@ -2,7 +2,7 @@ import IUrlResolver from './interfaces/IUrlResolver'
 import RouteMethod from './interfaces/RouteMethod'
 
 /**
- * signature of route mathcing function
+ * signature of route matching function
  */
 type RouteMatchFunction = (uri: string) => boolean
 
@@ -29,11 +29,8 @@ export default class Router implements IUrlResolver { // tslint:disable-line:max
         else if (typeof path === 'function') {
             newRoute.matchFunction = path
         }
-        else if (typeof path === 'string') {
+        else { // typeof path === 'string'
             newRoute.uri = path
-        }
-        else {
-            throw new Error('Unsupported path type for the route')
         }
         this.routes.push(newRoute)
         return this
@@ -51,10 +48,10 @@ export default class Router implements IUrlResolver { // tslint:disable-line:max
         if (route.uri === uri) {
             return true
         }
-        if (route.regexp !== null && uri.match(route.regexp)) {
+        else if (route.regexp !== null && uri.match(route.regexp)) {
             return true
         }
-        if (route.matchFunction !== null && route.matchFunction(uri)) {
+        else if (route.matchFunction !== null && route.matchFunction(uri)) {
             return true
         }
         return false
