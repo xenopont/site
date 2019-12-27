@@ -1,0 +1,7 @@
+frontend/public/app1.js
+node_modules
+backup
+docker
+.dockerignore
+.gitignore
+package-lock.json

@@ -1,11 +1,11 @@
 !.gitignore
 .idea/
-node_modules/
+node_modules
 .DS_Store
 .vs/
-frontend/dist/*
-!frontend/dist/.gitkeep
-frontend/js-compiled/*
-!frontend/js-compiled/.gitkeep
+client/dist/*
+!client/dist/.gitkeep
+client/js-compiled/*
+!client/js-compiled/.gitkeep
 npm-debug.log
 .vscode
