@@ -9,3 +9,4 @@ client/js-compiled/*
 !client/js-compiled/.gitkeep
 npm-debug.log
 .vscode
+.cache
