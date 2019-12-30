@@ -1,5 +1,5 @@
-import IUrlResolver from './interfaces/IUrlResolver'
-import RouteMethod from './interfaces/RouteMethod'
+import IUrlResolver from './types/IUrlResolver'
+import RouteMethod from './types/RouteMethod'
 
 /**
  * signature of route matching function
@@ -16,8 +16,7 @@ class Route { // tslint:disable-line:max-classes-per-file
     public uri: string | null = null
 }
 
-export { RouteMatchFunction }
-export default class Router implements IUrlResolver { // tslint:disable-line:max-classes-per-file
+class Router implements IUrlResolver { // tslint:disable-line:max-classes-per-file
     protected routes: Route[] = []
 
     public addRoute(path: string|RegExp|RouteMatchFunction, callback: RouteMethod) {
@@ -33,6 +32,7 @@ export default class Router implements IUrlResolver { // tslint:disable-line:max
             newRoute.uri = path
         }
         this.routes.push(newRoute)
+
         return this
     }
 
@@ -41,6 +41,7 @@ export default class Router implements IUrlResolver { // tslint:disable-line:max
         if (foundRoute) {
             return foundRoute.callback
         }
+
         return null
     }
 
@@ -54,6 +55,10 @@ export default class Router implements IUrlResolver { // tslint:disable-line:max
         else if (route.matchFunction !== null && route.matchFunction(uri)) {
             return true
         }
+
         return false
     }
 }
+
+export default Router
+export { RouteMatchFunction }

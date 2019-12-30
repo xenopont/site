@@ -1,4 +1,4 @@
-export default class Arrays {
+class Arrays {
     public static ensureArray(entity: any): any[] {
         if (entity.constructor === Array) {
             return entity
@@ -6,3 +6,5 @@ export default class Arrays {
         return [entity]
     }
 }
+
+export default Arrays

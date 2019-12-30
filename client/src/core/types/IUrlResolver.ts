@@ -1,5 +1,7 @@
 import RouteMethod from './RouteMethod'
 
-export default interface IUrlResolver {
+interface IUrlResolver {
     resolve(url: string): RouteMethod | null
 }
+
+export default IUrlResolver

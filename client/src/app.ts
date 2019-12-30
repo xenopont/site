@@ -1,4 +1,4 @@
-import RouteMethod from './core/interfaces/RouteMethod'
+import RouteMethod from './core/types/RouteMethod'
 import router from './routes'
 
 document.addEventListener('DOMContentLoaded', () => {
