@@ -6,7 +6,8 @@
     "scripts": {
         "lint": "node ./node_modules/tslint/bin/tslint --project .",
         "build": "node ./node_modules/parcel/bin/cli.js build ./src/index.html",
-        "watch": "node ./node_modules/parcel/bin/cli.js watch ./src/index.html"
+        "watch": "node ./node_modules/parcel/bin/cli.js watch ./src/index.html",
+        "production": "node ./node_modules/parcel/bin/cli.js build ./src/index.html --no-source-maps"
     },
     "repository": {
         "type": "git",
