@@ -1,14 +1,34 @@
 #!/usr/bin/env bash
 
+echo "Starting frontend server..."
+echo ""
 docker build -t front-image --file ./client/docker/front-dev.dockerfile .
 docker run --rm -d --name front -v ${PWD}:/srv/site -p 8081:80 front-image
-echo
-echo
-echo
-echo "Starting frontend server..."
-echo
-echo
-echo
+echo "                                                               "
+echo "                                                               "
+echo "                                                               "
+echo "    ╔═════════════════════════════════════════════════════╗    "
+echo "    ║ Frontend dev environment                            ║    "
+echo "    ╟─────────────────────────────────────────────────────╢    "
+echo "    ║                                                     ║    "
+echo "    ║ Command list:                                       ║    "
+echo "    ║                                                     ║    "
+echo "    ║     • install - installs npm dependencies           ║    "
+echo "    ║     • lint    - validates Typescript code quality   ║    "
+echo "    ║     • build   - builds the frontend from sources    ║    "
+echo "    ║     • watch   - starts watching source file changes ║    "
+echo "    ║                 and rebuilds them automatically     ║    "
+echo "    ║                                                     ║    "
+echo "    ╟─────────────────────────────────────────────────────╢    "
+echo "    ║                                                     ║    "
+echo "    ║ - open http://site.front:8081/ in your browser      ║    "
+echo "    ║     to see the current status of the frontend       ║    "
+echo "    ║ - type 'exit' to leave and stop the dev environment ║    "
+echo "    ║                                                     ║    "
+echo "    ╚═════════════════════════════════════════════════════╝    "
+echo "                                                               "
+echo "                                                               "
+echo "                                                               "
 docker exec -it front ash
 echo "Stopping frontend server..."
 docker stop front
