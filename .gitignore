@@ -7,6 +7,7 @@ client/dist/*
 !client/dist/.gitkeep
 client/js-compiled/*
 !client/js-compiled/.gitkeep
+client/src/config/app.ts
 npm-debug.log
 .vscode
 .cache

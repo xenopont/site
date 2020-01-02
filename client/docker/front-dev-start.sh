@@ -10,4 +10,10 @@ echo "alias watch=\"npm run watch\"" >> /root/.ashrc
 # apply aliases:
 . /root/.ashrc
 
+# apply environment dependent configuration
+cd ./src/config
+rm -f app.ts
+ln -s ./app.dev.ts app.ts
+cd ../..
+
 nginx -g "pid /tmp/nginx.pid; daemon off;"
