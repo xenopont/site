@@ -20,6 +20,9 @@ class Application implements IApplication {
         if (action) {
             action()
         }
+        else {
+            this.notFound(this.config)
+        }
     }
 
     protected createRouter(config: IKeyValuePair): IUrlResolver {
@@ -37,11 +40,8 @@ class Application implements IApplication {
         }
     }
 
-    protected executeAction(router: IUrlResolver, location: Location) {
-        const action: Action | null = router.resolve(location.pathname)
-        if (action) {
-            action()
-        }
+    protected notFound(/*config: IKeyValuePair*/): void {
+        console.error('404 Not Found') // tslint:disable-line:no-console
     }
 }
 
