@@ -1,5 +1,5 @@
 interface IApplication {
-    main(route: string): void
+    main(location: Location): void
 }
 
 export default IApplication

@@ -5,7 +5,7 @@ import IApplication from './core/types/IApplication'
 (() => {
     const appRun = () => {
         const app: IApplication = new Application(appConfig)
-        app.main(window.location.href)
+        app.main(window.location)
     }
 
     if (document.readyState === 'loading') {

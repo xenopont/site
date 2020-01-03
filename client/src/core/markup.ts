@@ -36,11 +36,11 @@ const attachInnerHtml = (element: HTMLElement, str: string) => {
 type ElementChild = ElementMarkup | string
 
 class ElementMarkup { // tslint:disable-line:max-classes-per-file
-    private readonly type: string
-    private readonly attributes: AttributeList
-    private content: ElementChild[]
+    protected readonly type: string
+    protected readonly attributes: AttributeList
+    protected content: ElementChild[]
     // -------- Event Handlers --------
-    private createEventHandler: HtmlElementEventHandler | null = null
+    protected createEventHandler: HtmlElementEventHandler | null = null
 
     public constructor(type: string, attributes: AttributeList, content: ElementChild[]) {
         this.type = type

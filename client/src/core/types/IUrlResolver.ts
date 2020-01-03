@@ -1,7 +1,7 @@
-import RouteMethod from './RouteMethod'
+import Action from './Action'
 
 interface IUrlResolver {
-    resolve(url: string): RouteMethod | null
+    resolve(pathname: string): Action | null
 }
 
 export default IUrlResolver
