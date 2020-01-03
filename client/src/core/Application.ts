@@ -40,7 +40,7 @@ class Application implements IApplication {
         }
     }
 
-    protected notFound(/*config: IKeyValuePair*/): void {
+    protected notFound(config: IKeyValuePair): void {
         console.error('404 Not Found') // tslint:disable-line:no-console
     }
 }
