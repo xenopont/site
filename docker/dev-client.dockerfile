@@ -8,11 +8,12 @@ RUN apk update && \
     apk add util-linux && \
     mkdir -p /srv/site
 
-WORKDIR /srv/site/client
+WORKDIR /srv/client
 
-COPY client/docker/front-dev-default.conf /etc/nginx/conf.d/default.conf
+COPY ./docker/dev-client.nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./docker/dev-client.start.sh /tmp/start.sh
 
 ENV ENV="/root/.ashrc"
 ENV NODE_ENV="development"
 
-CMD ["sh", "/srv/site/client/docker/front-dev-start.sh"]
+CMD ["ash", "/tmp/start.sh"]

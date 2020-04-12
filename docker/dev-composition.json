@@ -1,0 +1,23 @@
+{
+    "version": "3.7",
+    "services": {
+        "site-mongo": {
+            "container_name": "site-mongo",
+            "image": "mongo:4.2.5-bionic",
+            "ports": [ "27017:27017" ],
+            "volumes": [ "../database:/srv/database" ]
+        },
+        "site-server": {
+            "container_name": "site-server",
+            "image": "site-server-image",
+            "ports": [ "9091:80" ],
+            "volumes": [ "../server:/srv/server", "../shared:/srv/shared" ]
+        },
+        "site-client": {
+            "container_name": "site-client",
+            "image": "site-client-image",
+            "ports": [ "9092:80" ],
+            "volumes": [ "../client:/srv/client", "../shared:/srv/shared" ]
+        }
+    }
+}
