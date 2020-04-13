@@ -4,10 +4,9 @@
     "description": "Website server application",
     "main": "app.ts",
     "scripts": {
-        "lint": "node ./node_modules/tslint/bin/tslint --project .",
-        "build": "node ./node_modules/parcel/bin/cli.js build ./src/index.html",
-        "watch": "node ./node_modules/parcel/bin/cli.js watch ./src/index.html",
-        "production": "node ./node_modules/parcel/bin/cli.js build ./src/index.html --no-source-maps"
+        "build": "node ./node_modules/.bin/tsc",
+        "dev": "node ./node_modules/.bin/nodemon",
+        "lint": "node ./node_modules/tslint/bin/tslint --project ."
     },
     "repository": {
         "type": "git",
@@ -23,9 +22,11 @@
         "express": "4.17.1"
     },
     "devDependencies": {
-        "tslint": "latest",
-        "typescript": "latest",
+        "@types/express": "latest",
+        "@types/node": "latest",
         "nodemon": "latest",
-        "@types/node": "latest"
+        "tslint": "latest",
+        "ts-node": "latest",
+        "typescript": "latest"
     }
 }
