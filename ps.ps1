@@ -20,7 +20,7 @@ Write-Host "    |                 and rebuilds them automatically     |    " -fo
 Write-Host "    |                                                     |    " -foreground Gray
 Write-Host "    |-----------------------------------------------------|    " -foreground Gray
 Write-Host "    |                                                     |    " -foreground Gray
-Write-Host "    | - open http://localhost:9081/ in your browser       |    " -foreground Gray
+Write-Host "    | - open http://localhost:9092/ in your browser       |    " -foreground Gray
 Write-Host "    |     to see the current status of the frontend       |    " -foreground Gray
 Write-Host "    | - type 'exit' to leave and stop the dev environment |    " -foreground Gray
 Write-Host "    |                                                     |    " -foreground Gray
