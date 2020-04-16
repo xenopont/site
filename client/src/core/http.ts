@@ -10,5 +10,5 @@ export default {
             xhr.addEventListener('timeout', resolveNull)
             xhr.send()
         })
-    }
+    },
 }

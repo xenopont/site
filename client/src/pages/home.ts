@@ -1,14 +1,19 @@
+import Action from '../core/types/Action'
+import dom from '../core/dom'
 import httpClient from '../core/http'
 
-const showMainPage = async () => {
-    // request main page article list1
+const errorMessage = () => {
+    //
+}
+
+const showMainPage: Action = async () => {
     const response: string|null = await httpClient.get('https://google.com/')
-    console.log(response)
-    // if success
-    //     remove body content
+    if (response === null) {
+        errorMessage()
+        return
+    }
+    dom.removeContent(document.body)
     //     show list
-    // else
-    //     show error message
 }
 
 export default showMainPage
