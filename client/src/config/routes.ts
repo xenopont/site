@@ -1,7 +1,9 @@
 import { Route } from '../core/Routing'
 
+import home from '../pages/home'
+
 const routes: Route[] = [
-    new Route('/', () => { console.log('Home Page') }), // tslint:disable-line:no-console
+    new Route('/', home), // tslint:disable-line:no-console
 ]
 
 export default routes

@@ -1,6 +1,7 @@
 {
     "name": "web-site-client",
     "version": "0.0.1",
+    "browserslist": [ "since 2020-01" ],
     "description": "Website client application",
     "main": "index.html",
     "scripts": {
