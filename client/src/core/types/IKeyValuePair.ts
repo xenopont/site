@@ -1,3 +1,3 @@
-interface IKeyValuePair { [key: string]: any }
+interface IKeyValuePair { [ key: string ]: any }
 
 export default IKeyValuePair

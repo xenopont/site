@@ -4,6 +4,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 
 import config from './config/current'
+import cors from './services/cors'
 import log from './services/log'
 import db from './db/base'
 import routes from './routes'
@@ -26,6 +27,7 @@ const main = async (): Promise<void> => {
     // start a server
     log.info('Starting a server...')
     app.use(bodyParser.json())
+    app.use(cors)
     routes(app)
     const server: Server = app.listen(config.PORT, () => {
         if (config.currentEnvironment === config.environments.dev) {

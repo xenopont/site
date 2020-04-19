@@ -8,6 +8,7 @@ import config from './production'
 
 const devConfig: IKeyValuePair = { ...config }
 
-devConfig.environment = 'development'
+devConfig.apiHost = 'http://localhost:9091'
+devConfig.currentEnvironment = config.environments.dev
 
 export default devConfig
