@@ -1,11 +1,13 @@
 {
     "name": "web-site-client",
     "version": "0.0.1",
-    "browserslist": [ "since 2020-01" ],
+    "browserslist": [
+        "since 2020-01"
+    ],
     "description": "Website client application",
     "main": "index.html",
     "scripts": {
-        "lint": "node ./node_modules/tslint/bin/tslint --project .",
+        "lint": "node ./node_modules/.bin/eslint ./src/**.ts ./test/**.ts",
         "build": "node ./node_modules/parcel/bin/cli.js build ./src/index.html",
         "watch": "node ./node_modules/parcel/bin/cli.js watch ./src/index.html",
         "production": "node ./node_modules/parcel/bin/cli.js build ./src/index.html --no-source-maps"
@@ -22,8 +24,13 @@
     "homepage": "https://github.com/xenopont/site#readme",
     "dependencies": {},
     "devDependencies": {
-        "tslint": "latest",
-        "typescript": "latest",
-        "parcel": "latest"
+        "@types/mocha": "latest",
+        "@types/sinon": "latest",
+        "@typescript-eslint/parser": "latest",
+        "eslint": "latest",
+        "parcel": "latest",
+        "should": "latest",
+        "sinon": "latest",
+        "typescript": "latest"
     }
 }

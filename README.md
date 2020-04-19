@@ -1,33 +1,8 @@
 # Readme
 
 ## Configuring Client
-`client/src/config/production.ts` is the main app configuration.
-
-The app imports a configuration from `./config/index.ts`, designed for the development environment and shall be simply replaced by `./config/production.ts` in a production container. 
 
 ### Example:
-**production.ts**
-```ts
-import IKeyValuePair from '../core/types/IKeyValuePair'
-
-const config: IKeyValuePair = {
-    environment: 'production',
-}
-
-export default config
-```
-
-**index.ts**
-```ts
-import IKeyValuePair from '../core/types/IKeyValuePair'
-import config from './production'
-
-const devConfig: IKeyValuePair = { ...config }
-
-devConfig.environment = 'development'
-
-export default devConfig
-```
 
 ## Routing
 For the default `Router`, there must be a `routes: Route[]` field in the application configuration object. Every `Route` provides and `Action` method to be executed on match and one of the following: either a `string` to be strictly equal to the `path`, or a `RegExp`, or a `RouteMatchFunction` to be tested against the `path`.

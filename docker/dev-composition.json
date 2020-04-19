@@ -10,7 +10,7 @@
         "site-server": {
             "container_name": "site-server",
             "image": "site-server-image",
-            "ports": [ "9091:80" ],
+            "ports": [ "9091:3000" ],
             "volumes": [ "../server:/srv/server", "../shared:/srv/shared" ]
         },
         "site-client": {

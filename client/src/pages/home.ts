@@ -13,7 +13,7 @@ const showMainPage: Action = async () => {
         return
     }
     dom.removeContent(document.body)
-    //     show list
+    console.log(response)
 }
 
 export default showMainPage
