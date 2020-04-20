@@ -3,11 +3,15 @@ class Arrays {
         if (entity === null || entity === undefined) {
             return []
         }
-        if (entity.constructor === Array) {
+        if (this.isArray(entity)) {
             return entity
         }
 
         return [entity]
+    }
+
+    public static isArray(entity: any): boolean {
+        return entity.constructor === Array
     }
 }
 

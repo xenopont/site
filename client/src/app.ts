@@ -1,4 +1,4 @@
-import appConfig from './config/index'
+import appConfig from './config/current'
 import Application from './core/Application'
 import IApplication from './core/types/IApplication'
 

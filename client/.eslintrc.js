@@ -3,7 +3,9 @@ module.exports = {
         browser: true,
         es2020: true,
     },
-    extends: 'eslint:recommended',
+    extends: [
+        'eslint:recommended',
+    ],
     globals: {},
     ignorePatterns: [ './node_modules/', './dist/', './cache/' ],
     parser: '@typescript-eslint/parser',
@@ -12,6 +14,7 @@ module.exports = {
         sourceType: 'module',
         impliedStrict: true,
     },
+    plugins: [ '@typescript-eslint' ],
     root: true,
     rules: {
         indent: [ 'error', 4, { SwitchCase: 1 } ],

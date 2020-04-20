@@ -1,5 +1,4 @@
 import Router from '../core/Routing'
-import IKeyValuePair from '../core/types/IKeyValuePair'
 
 import routes from './routes'
 
@@ -8,8 +7,8 @@ const environments = {
     prod: 'production',
 }
 
-const config: IKeyValuePair = {
-    apiHost: 'define me',
+const config = {
+    apiRoot: 'define me',
     currentEnvironment: environments.prod,
     environments,
     router: new Router(), // optional; if router is not provided a new Router() will be created by Application
