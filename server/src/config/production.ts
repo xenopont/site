@@ -5,6 +5,9 @@ const environments = {
 
 const db = {
     connectionString: 'not configured',
+    collections: {
+        articles: 'articles',
+    }
 }
 
 export default {

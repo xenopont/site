@@ -13,7 +13,7 @@ const client: MongoClient = new MongoClient(config.db.connectionString, {
 })
 
 // async wrapper
-const clientConnect: Function = async (): Promise<void> => {
+const clientConnect = async (): Promise<void> => {
     return new Promise<void>((resolve, reject): void => {
         client.connect((err: MongoError): void => {
             if (err) {
@@ -26,7 +26,7 @@ const clientConnect: Function = async (): Promise<void> => {
 }
 
 // export
-const connect: Function = async (): Promise<boolean> => {
+const connect = async (): Promise<boolean> => {
     try {
         await clientConnect()
         return true
@@ -38,11 +38,13 @@ const connect: Function = async (): Promise<boolean> => {
 }
 
 // export
-const disconnect: Function = async (): Promise<void> => {
+const disconnect = async (): Promise<void> => {
     await client.close()
 }
 
 export default {
+    client,
+
     connect,
     disconnect,
 }
