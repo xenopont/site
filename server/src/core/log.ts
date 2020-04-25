@@ -21,7 +21,6 @@ const out: Function = (prefix: string, message: string, ...objects: any[]) => {
 }
 
 export default {
-    out: out,
     info: (message: string, ...objects: any[]) => out('Info', message, ...objects),
     warn: (message: string, ...objects: any[]) => out('Warn', message, ...objects),
     error: (message: string, ...objects: any[]) => out('Error', message, ...objects),

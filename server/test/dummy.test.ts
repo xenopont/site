@@ -1,7 +1,7 @@
 import sinon, { SinonSpy  } from 'sinon'
 import should from 'should' // eslint-disable-line no-unused-vars
 
-import sleep from '../src/services/sleep'
+import sleep from '../src/core/sleep'
 
 describe('Dummy test case', async (): Promise<void> => {
     it('Should do nothing asynchronously', async (): Promise<void> => {

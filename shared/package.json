@@ -1,0 +1,23 @@
+{
+    "name": "web-site-shared",
+    "version": "0.0.1",
+    "description": "Website shared modules",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xenopont/site.git"
+    },
+    "author": "Sergei Kovalenko",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/xenopont/site/issues"
+    },
+    "homepage": "https://github.com/xenopont/site#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/express": "latest",
+        "@types/mocha": "latest",
+        "@types/mongodb": "latest",
+        "@types/node": "latest"
+    }
+}

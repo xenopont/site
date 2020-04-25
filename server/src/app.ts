@@ -4,18 +4,18 @@ import express from 'express'
 import bodyParser from 'body-parser'
 
 import config from './config/current'
-import cors from './services/cors'
-import log from './services/log'
-import db from './db/base'
+import cors from './core/cors'
+import log from './core/log'
+import mongo from './core/db/mongo'
 import routes from './routes'
-import sleep from './services/sleep'
+import sleep from './core/sleep'
 
 const app: Express = express()
 
 const main = async (): Promise<void> => {
     // check the db connection
     log.info('Connecting to the database...')
-    if (! await db.connect()) {
+    if (! await mongo.connect(config.db.connectionString)) {
         const wait: number = 2
         log.error(`No connection to the database. Shutting down the application in ${wait} seconds.`)
         await sleep(wait * 1000)
@@ -39,13 +39,13 @@ const main = async (): Promise<void> => {
     // catch console ^C signal
     process.on('SIGINT', () => {
         server.close(() => { console.log(); log.info('Process stopped') }) // eslint-disable-line no-console
-        db.disconnect()
+        mongo.disconnect()
         process.exit(0)
     })
     // catch kubernetes term signal
     process.on('SIGTERM', () => {
         server.close(() => { console.log(); log.info('Process terminated') }) // eslint-disable-line no-console
-        db.disconnect()
+        mongo.disconnect()
         process.exit(0)
     })
 }

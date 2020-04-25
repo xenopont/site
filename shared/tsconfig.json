@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
+        "composite": true,
         "target": "esnext",
-        "module": "commonjs",
+        "module": "esnext",
         "sourceMap": false,
         "outDir": "./dist",
         "rootDir": "./src",
@@ -12,8 +13,5 @@
         "importHelpers": true,
         "types": [ "node", "mocha" ],
         "typeRoots": [ "node_modules/@types" ]
-    },
-    "references": [
-        { "path": "../shared" }
-    ]
+    }
 }

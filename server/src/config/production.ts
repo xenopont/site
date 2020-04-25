@@ -5,6 +5,7 @@ const environments = {
 
 const db = {
     connectionString: 'not configured',
+    dbName: 'site',
     collections: {
         articles: 'articles',
     }
