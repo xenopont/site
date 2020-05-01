@@ -48,6 +48,11 @@ class ElementMarkup { // tslint:disable-line:max-classes-per-file
         this.content = content
     }
 
+    public appendChild(child: ElementChild): ElementMarkup {
+        this.content.push(child)
+        return this
+    }
+
     public toHtml(): HTMLElement {
         const element: HTMLElement = document.createElement(this.type)
         // attach attributes
@@ -166,10 +171,16 @@ export default {
     img(attributes: AttributeList): ElementMarkup {
         return this.element('img', attributes, [])
     },
+    li(attributes?: AttributeList | MarkupContent, content?: MarkupContent): ElementMarkup {
+        return this.element('li', attributes, content)
+    },
     p(attributes?: AttributeList | MarkupContent, content?: MarkupContent): ElementMarkup {
         return this.element('p', attributes, content)
     },
     span(attributes?: AttributeList | MarkupContent, content?: MarkupContent): ElementMarkup {
         return this.element('span', attributes, content)
+    },
+    ul(attributes?: AttributeList | MarkupContent, content?: MarkupContent): ElementMarkup {
+        return this.element('ul', attributes, content)
     },
 }
