@@ -1,18 +1,24 @@
 import Arrays from './Arrays'
+import { Dictionary } from './Dictionary'
 
-type HtmlElementEventHandler = (sender: HTMLElement) => void
+type HtmlElementEventHandler = (sender: HTMLElement) => void // eslint-disable-line no-unused-vars
 
-type AttributeValue = string | number | AttributeList
-type AttributeList = { // tslint:disable-line:interface-over-type-literal
+type AttributeValue = string | number | boolean | Function | AttributeList
+type AttributeList = { // eslint:disable-line:interface-over-type-literal
     [key: string]: AttributeValue
+}
+type ElementStyle = Dictionary<string|number> // eslint:disable-line:interface-over-type-literal
+
+const applyStyle = (element: HTMLElement, style: ElementStyle) => {
+    Object.keys(style).forEach((selector: string) => {
+        (element.style as any)[selector] = style[selector]
+    })
 }
 
 const attachAttribute = (element: HTMLElement, attrName: string, attrValue: AttributeValue) => {
     switch (attrName) {
         case 'style':
-            Object.keys(attrValue).forEach((selector: string) => {
-                (element.style as any)[selector] = (attrValue as AttributeList)[selector]
-            })
+            applyStyle(element, attrValue as ElementStyle)
             break
         case 'data':
             Object.keys(attrValue).forEach((field: string) => { element.dataset[field] = (attrValue as any)[field] })
@@ -35,7 +41,7 @@ const attachInnerHtml = (element: HTMLElement, str: string) => {
 
 type ElementChild = ElementMarkup | string
 
-class ElementMarkup { // tslint:disable-line:max-classes-per-file
+class ElementMarkup { // eslint:disable-line:max-classes-per-file
     protected readonly type: string
     protected readonly attributes: AttributeList
     protected content: ElementChild[]
@@ -83,13 +89,15 @@ class ElementMarkup { // tslint:disable-line:max-classes-per-file
     }
 }
 
-type MarkupContent = ElementMarkup | ElementMarkup[] | string | string[]
+type MarkupContent = ElementMarkup | string | (ElementMarkup | string)[]
 
 export { AttributeList }
 export { AttributeValue }
 export { ElementMarkup }
+export { ElementStyle }
 export { HtmlElementEventHandler }
 export { MarkupContent }
+export { applyStyle }
 export default {
     element(type: string, attributes?: AttributeList | MarkupContent, content?: MarkupContent): ElementMarkup {
         if (!attributes) {
@@ -167,6 +175,9 @@ export default {
     },
     h6(attributes?: AttributeList | MarkupContent, content?: MarkupContent): ElementMarkup {
         return this.element('h6', attributes, content)
+    },
+    i(attributes?: AttributeList | MarkupContent, content?: MarkupContent): ElementMarkup {
+        return this.element('i', attributes, content)
     },
     img(attributes: AttributeList): ElementMarkup {
         return this.element('img', attributes, [])
