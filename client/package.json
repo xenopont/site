@@ -26,6 +26,7 @@
     "devDependencies": {
         "@types/mocha": "latest",
         "@types/sinon": "latest",
+        "@typescript-eslint/eslint-plugin": "latest",
         "@typescript-eslint/parser": "latest",
         "eslint": "latest",
         "parcel": "latest",
