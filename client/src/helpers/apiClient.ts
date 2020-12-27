@@ -7,6 +7,7 @@ const loadArticleList = async (): Promise<any[]> => {
     if (!response || !response.list || !Arrays.isArray(response.list)) {
         return []
     }
+
     return response.list
 }
 
