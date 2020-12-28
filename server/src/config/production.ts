@@ -8,7 +8,7 @@ const db = {
     dbName: 'site',
     collections: {
         articles: 'articles',
-    }
+    },
 }
 
 export default {

@@ -8,7 +8,7 @@ const contents = async (request: Request, response: Response): Promise<void> => 
         response.status(500).send('Internal Server Error')
         return
     }
-    response.status(200).send({ list: list})
+    response.status(200).send({ list: list })
 }
 
 export default {
