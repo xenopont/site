@@ -4,7 +4,11 @@ module.exports = {
         es2020: true,
         mongo: true,
     },
-    extends: 'eslint:recommended',
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    ],
     globals: {},
     ignorePatterns: [ './node_modules/', './dist/' ],
     parser: '@typescript-eslint/parser',
@@ -12,7 +16,9 @@ module.exports = {
         ecmaVersion: 2020,
         sourceType: 'module',
         impliedStrict: true,
+        project: './tsconfig.json',
     },
+    plugins: [ '@typescript-eslint' ],
     root: true,
     rules: {
         indent: [ 'error', 4, { SwitchCase: 1 } ],
@@ -28,5 +34,7 @@ module.exports = {
         }],
         semi: [ 'error', 'never' ],
         'no-multiple-empty-lines': [ 2, { max: 1, maxBOF: 0 } ],
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'error',
     },
 }

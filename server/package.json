@@ -29,6 +29,7 @@
         "@types/mongodb": "latest",
         "@types/node": "latest",
         "@types/sinon": "latest",
+        "@typescript-eslint/eslint-plugin": "latest",
         "@typescript-eslint/parser": "latest",
         "eslint": "latest",
         "mocha": "latest",
