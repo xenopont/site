@@ -1,5 +1,5 @@
 import sinon, { SinonSpy } from 'sinon'
-import should from 'should' // eslint-disable-line no-unused-vars
+import 'should'
 
 describe('Dummy test case', async (): Promise<void> => {
     it('Should do nothing asynchronously', async (): Promise<void> => {

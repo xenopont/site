@@ -11,9 +11,3 @@ client/dist/*
 !client/dist/.gitkeep
 client/js-compiled/*
 !client/js-compiled/.gitkeep
-
-server/dist/*
-!server/dist/.gitkeep
-
-!database/.gitkeep
-database/*

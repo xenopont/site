@@ -3,7 +3,6 @@
 echo "Building servers..."
 echo ""
 docker build -t site-client-image --file ./docker/dev-client.dockerfile .
-docker build -t site-server-image --file ./docker/dev-server.dockerfile .
 echo "Starting servers..."
 echo ""
 docker-compose -p site --file ./docker/dev-composition.json up -d
