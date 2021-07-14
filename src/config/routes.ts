@@ -1,9 +1,6 @@
-import { Route } from '../core/Routing'
+import { IRoute, route } from '../core/routing/DefaultRouter'
+import { defaultAction } from '../core/routing/RouteAction'
 
-import home from '../pages/home'
-
-const routes: Route[] = [
-    new Route('/', home),
+export const routes: IRoute[] = [
+    route('/', defaultAction),
 ]
-
-export default routes

@@ -1,9 +1,4 @@
-import Router from './Routing'
-import Action from './types/Action'
 import IApplication from './types/IApplication'
-import IKeyValuePair from './types/IKeyValuePair'
-import IRouter from './types/IRouter'
-import IUrlResolver from './types/IUrlResolver'
 
 class Application implements IApplication {
     protected config: IKeyValuePair = {}
@@ -40,8 +35,8 @@ class Application implements IApplication {
         }
     }
 
-    protected notFound(config: IKeyValuePair): void {
-        console.error('404 Not Found') // tslint:disable-line:no-console
+    protected notFound(): void {
+        console.error('Not Found') // tslint:disable-line:no-console
     }
 }
 
